@@ -1,3 +1,10 @@
+---
+services: 
+platforms: .Net
+author: msonecode
+---
+
+# How to build ASP.NET Core application to Docker images in VSTS
 ## Introduction:
 
 This example demonstrates how to build an ASP.NET Core Application to a Docker image and run the Docker container in VSTS.
