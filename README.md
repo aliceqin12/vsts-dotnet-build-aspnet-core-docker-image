@@ -1,3 +1,10 @@
+---
+services: 
+platforms: .Net
+author: msonecode
+---
+
+# How to build ASP.NET Core application to Docker images in VSTS
 ## Introduction:
 
 This example demonstrates how to build an ASP.NET Core Application to a Docker image and run the Docker container in VSTS.
@@ -33,7 +40,7 @@ Refer to the **Get the Docker task** and **Use the Docker extension in VSTS** se
 
 ***1. Create an ASP.NET Core application***
 
-If you’re using Visual Studio: [https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc)
+If youâ€™re using Visual Studio: [https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc)
 
 
 ***2. Check the version of .NETCore framework on Docker Host***
@@ -44,7 +51,7 @@ e.g. output: drwxr-xr-x 2 root root 12288 Jan  5 04:57 ***1.1.0***
 
 ***3. Add Docker Support***
 
-If you’re using Visual Studio: 
+If youâ€™re using Visual Studio: 
 
 [https://marketplace.visualstudio.com/items?itemName=MicrosoftCloudExplorer.VisualStudioToolsforDocker-Preview](https://marketplace.visualstudio.com/items?itemName=MicrosoftCloudExplorer.VisualStudioToolsforDocker-Preview)
 
@@ -54,21 +61,21 @@ If you’re using Visual Studio:
     WORKDIR /app
     COPY netcore/src/netcore/out .
     ENTRYPOINT ["dotnet", "netcore.dll"]
-This example assumes the project is structured as follows and the application is named “netcore”:
+This example assumes the project is structured as following and the application is named as â€œnetcoreâ€:
 
 ![4](https://raw.githubusercontent.com/shaqian/Docker-VSTS/master/4.png)
 
 ***5. (Optional) Update the application from Microsoft.NETCore.App 1.0.1 to 1.1.0***
 
-Right click on your project, click **Manage NuGet Packages**, click **Updates** and update.
+Right click on your project, click **Manage NuGet Packages**, click **Updates** to start updating.
 
 ***6. (Optional) Edit project.json if the application is updated to Microsoft.NETCore.App 1.1.0***
 ```shell
 {
   "dependencies": {
-    ……
+    â€¦â€¦
     "Microsoft.NETCore.App ": "1.1.0", ==> Delete this line
-    ……
+    â€¦â€¦
   },
   "tools": {
   },
